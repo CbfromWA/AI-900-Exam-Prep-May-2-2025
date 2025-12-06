@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-900 Study Guide | May 2025 Update</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --azure-blue: #0078D4;
+            --dark-blue: #103f91;
+            --light-bg: #f3f2f1;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --gen-ai-color: #d83b01; /* Highlighting GenAI as it's the biggest section */
+            --ml-color: #008575;
+            --cv-color: #d13438;
+            --nlp-color: #881798;
+            --core-color: #0078d4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--azure-blue);
+        }
+
+        .header-content {
+            padding: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Updates Alert Banner */
+        .updates-banner {
+            background: linear-gradient(135deg, #fff4ce 0%, #ffe6cc 100%);
+            border-left: 6px solid #ffaa44;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .update-icon {
+            font-size: 2rem;
+            color: #d83b01;
+        }
+
+        .update-text h3 {
+            margin: 0 0 5px 0;
+            color: #d83b01;
+        }
+
+        /* Grid Layout for Domains */
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .domain-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid transparent;
+        }
+
+        .domain-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Card Specific Styling */
+        .card-ai { border-color: var(--core-color); }
+        .card-ml { border-color: var(--ml-color); }
+        .card-cv { border-color: var(--cv-color); }
+        .card-nlp { border-color: var(--nlp-color); }
+        .card-gen { 
+            border-color: var(--gen-ai-color); 
+            grid-column: span 1; /* Default span */
+            background: #fffdfc;
+        }
+
+        /* Make GenAI card span 2 columns on larger screens because it's important */
+        @media (min-width: 900px) {
+            .card-gen { grid-column: span 2; }
+            .card-gen .card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+            .card-gen .btn-container { grid-column: span 2; }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .weight-badge {
+            background: #eee;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .card-body ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .card-body li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .key-concept {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .btn-container {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .study-btn {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        /* Button Colors */
+        .btn-ai { background: #e6f2fb; color: var(--core-color); }
+        .btn-ai:hover { background: var(--core-color); color: white; }
+
+        .btn-ml { background: #e6f7f5; color: var(--ml-color); }
+        .btn-ml:hover { background: var(--ml-color); color: white; }
+
+        .btn-cv { background: #fbe6e7; color: var(--cv-color); }
+        .btn-cv:hover { background: var(--cv-color); color: white; }
+
+        .btn-nlp { background: #f3e6f5; color: var(--nlp-color); }
+        .btn-nlp:hover { background: var(--nlp-color); color: white; }
+
+        .btn-gen { background: #fdece8; color: var(--gen-ai-color); }
+        .btn-gen:hover { background: var(--gen-ai-color); color: white; }
+
+        /* Exam Readiness Section */
+        .readiness-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            margin-top: 40px;
+        }
+
+        .readiness-btn {
+            display: inline-block;
+            background: var(--azure-blue);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,120,212,0.3);
+            transition: transform 0.2s;
+        }
+
+        .readiness-btn:hover {
+            transform: scale(1.05);
+            background: var(--dark-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            .study-btn, .readiness-btn { border: 1px solid #ccc; }
+            body { background: white; }
+            .container { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <img src="http://googleusercontent.com/image_generation_content/0" alt="AI-900 Study Guide Header" class="header-img">
+            <div class="header-content">
+                <h1>AI-900: Azure AI Fundamentals</h1>
+                <div class="subtitle">Complete Study Cheat Sheet | Updated for May 2025 Exam Version</div>
+            </div>
+        </header>
+
+        <!-- Updates Alert -->
+        <div class="updates-banner">
+            <div class="update-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="update-text">
+                <h3>Critical Updates (Since May 2025)</h3>
+                <p><strong>1. "Azure AI Foundry":</strong> This is the new name/concept for the unified AI platform. If you see "Foundry" on the exam, think "Unified Studio to build/manage models".</p>
+                <p><strong>2. Generative AI is #1:</strong> The weight for GenAI has increased to <strong>20-25%</strong>. It is now the most critical section to master.</p>
+            </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="domain-grid">
+
+            <!-- Domain 1: AI Workloads -->
+            <div class="domain-card card-ai">
+                <div class="card-header">
+                    <div class="icon-circle" style="background: var(--core-color);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">AI Workloads</h2>
+                        <span class="weight-badge">15-20%</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="key-concept">6 Responsible AI Principles:</span> Fairness, Reliability/Safety, Privacy/Security, Inclusiveness, Transparency, Accountability. (Memorize these!)</li>
+                        <li><span class="key-concept">Workload Types:</span> Computer Vision vs NLP vs GenAI vs Document Intelligence.</li>
+                    </ul>
+                    <div class="btn-container">
+                        <a href="https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/" target="_blank" class="study-btn btn-ai">
+                            <i class="fas fa-book-open"></i> Study Module
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain 2: Machine Learning -->
+            <div class="domain-card card-ml">
+                <div class="card-header">
+                    <div class="icon-circle" style="background: var(--ml-color);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">Machine Learning</h2>
+                        <span class="weight-badge">15-20%</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="key-concept">Regression:</span> Predicting a number (e.g., Price, Temp).</li>
+                        <li><span class="key-concept">Classification:</span> Predicting a Category (Yes/No, Dog/Cat).</li>
+                        <li><span class="key-concept">AutoML:</span> Automates algorithm selection (No code needed).</li>
+                        <li><span class="key-concept">Training vs Validation:</span> Train to learn, Validate to test accuracy.</li>
+                    </ul>
+                    <div class="btn-container">
+                        <a href="https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/" target="_blank" class="study-btn btn-ml">
+                            <i class="fas fa-book-open"></i> Study Module
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain 3: Computer Vision -->
+            <div class="domain-card card-cv">
+                <div class="card-header">
+                    <div class="icon-circle" style="background: var(--cv-color);">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">Computer Vision</h2>
+                        <span class="weight-badge">15-20%</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="key-concept">Image Classification:</span> Labeling an entire image.</li>
+                        <li><span class="key-concept">Object Detection:</span> Finding location (bounding box) of items.</li>
+                        <li><span class="key-concept">OCR:</span> Reading text from images/scans.</li>
+                        <li><span class="key-concept">Face API:</span> Emotional analysis/Identity.</li>
+                    </ul>
+                    <div class="btn-container">
+                        <a href="https://learn.microsoft.com/en-us/training/modules/get-started-computer-vision-azure/" target="_blank" class="study-btn btn-cv">
+                            <i class="fas fa-book-open"></i> Study Module
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain 4: NLP -->
+            <div class="domain-card card-nlp">
+                <div class="card-header">
+                    <div class="icon-circle" style="background: var(--nlp-color);">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">Natural Language (NLP)</h2>
+                        <span class="weight-badge">15-20%</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="key-concept">Sentiment Analysis:</span> Is the review Positive or Negative?</li>
+                        <li><span class="key-concept">Entity Recognition:</span> Extracting Names, Dates, Emails.</li>
+                        <li><span class="key-concept">Key Phrase Extraction:</span> Main talking points.</li>
+                        <li><span class="key-concept">Language Service:</span> The core Azure service for text.</li>
+                    </ul>
+                    <div class="btn-container">
+                        <a href="https://learn.microsoft.com/en-us/training/modules/get-started-language-azure/" target="_blank" class="study-btn btn-nlp">
+                            <i class="fas fa-book-open"></i> Study Module
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domain 5: Generative AI (Highlighted) -->
+            <div class="domain-card card-gen">
+                <div class="card-header">
+                    <div class="icon-circle" style="background: var(--gen-ai-color);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">Generative AI (Top Priority)</h2>
+                        <span class="weight-badge" style="background-color: #ffd4c9; color: #a42e01;">20-25%</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h4 style="margin-top:0;">Concepts</h4>
+                        <ul>
+                            <li><span class="key-concept">Generative Models:</span> Create new content (Text, Code, Images) based on training.</li>
+                            <li><span class="key-concept">Prompt Engineering:</span> Crafting inputs to guide the model.</li>
+                            <li><span class="key-concept">Copilots:</span> The application layer assisting users.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="margin-top:0;">Azure Tools</h4>
+                        <ul>
+                            <li><span class="key-concept">Azure AI Foundry:</span> Unified platform to Build, Evaluate, and Deploy.</li>
+                            <li><span class="key-concept">Model Catalog:</span> Repository for GPT-4, Llama, and other foundation models.</li>
+                            <li><span class="key-concept">Responsible GenAI:</span> Mitigating Hallucinations and Bias.</li>
+                        </ul>
+                    </div>
+                    <div class="btn-container">
+                        <a href="https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/" target="_blank" class="study-btn btn-gen">
+                            <i class="fas fa-rocket"></i> Study High-Priority Module
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Readiness Section -->
+        <div class="readiness-section">
+            <h2 style="color: var(--dark-blue);">Are you ready for the exam?</h2>
+            <p>Don't guess! Use the official Microsoft Practice Assessment. It uses the same style of questions you will see on test day.</p>
+            <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/practice/assessment?assessment-type=practice&assessmentId=26" target="_blank" class="readiness-btn">
+                Take Free Practice Test <i class="fas fa-arrow-right"></i>
+            </a>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Note: Score 80%+ consistently before scheduling.</p>
+        </div>
+
+        <footer>
+            <p>Generated by Gemini | Based on Official Microsoft Learn AI-900 Study Guide (May 2025)</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
