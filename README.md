@@ -9,7 +9,7 @@ Welcome! I have compiled my notes and tools into this repository to share with t
 | Type | Resource | Description |
 | :--- | :--- | :--- |
 | 📊 | **[Infographic Summary](AI900_Study_Guide.html)** | Visual guide with clickable study links. |
-| 📄 | **[Detailed Notes (PDF)](AI900_Exam_Summary_Details.pdf)** | In-depth summary of all exam skills. |
+| 📄 | **[Detailed Notes (PDF)](AI900SummaryDetail.pdf)** | In-depth summary of all exam skills. |
 | 🗓️ | **[10-Day Schedule](10days-40hrsStudySchedule.md)** | A 40-hour plan to stay on track. |
 
 ---
