@@ -1,11 +1,16 @@
-# Caroline's Microsoft AI-900 Exam Study Guide (updated May 2, 2025)
+# 🤖 Caroline's AI-900 Study Hub
 
-Welcome to my repository. I am sharing a few files in hope it will help you to prepare for AI-900 Exam:
+**Goal:** Master the Microsoft Azure AI Fundamentals Exam.
 
-### Directory:
-* [InfoGraphic Summary with study links](AI900_Study_Guide.html)
-* [Detail Summary in PDF](AI900_Exam_Summary_Details.pdf)
-* [Sample Study Schedule based on 10 days, 4 hrs/day](10days-40hrsStudySchedule.md)
+Welcome! I have compiled my notes and tools into this repository to share with the community. Feel free to use these resources for your own preparation.
+
+### 📚 What's Inside:
+
+| Type | Resource | Description |
+| :--- | :--- | :--- |
+| 📊 | **[Infographic Summary](AI900_Study_Guide.html)** | Visual guide with clickable study links. |
+| 📄 | **[Detailed Notes (PDF)](AI900_Exam_Summary_Details.pdf)** | In-depth summary of all exam skills. |
+| 🗓️ | **[10-Day Schedule](10days-40hrsStudySchedule.md)** | A 40-hour plan to stay on track. |
 
 ---
-*Created by [Caroline.B]*
+*Maintained by Caroline B.*
