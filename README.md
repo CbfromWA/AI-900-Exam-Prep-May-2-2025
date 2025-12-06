@@ -8,7 +8,7 @@ Welcome! I have compiled my notes and tools into this repository to share with t
 
 | Type | Resource | Description |
 | :--- | :--- | :--- |
-| 📊 | **[Infographic Summary](https://CbfromWA.github.io/AI900-Exam-Prep/AI900_Study_Guide.html)** | Visual guide with clickable study links. |
+| 📊 | **[Infographic Summary](https://cbfromwa.github.io/AI900-Exam-Prep/AI900StudyGuide.html)** | Visual guide with clickable study links. |
 | 📄 | **[Detailed Notes (PDF)](AI900SummaryDetails.pdf)** | In-depth summary of all exam skills. |
 | 🗓️ | **[10-Day Schedule](10days-40hrsStudySchedule.md)** | A 40-hour plan to stay on track. |
 
