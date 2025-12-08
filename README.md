@@ -1,3 +1,4 @@
+![Status](https://img.shields.io/badge/Status-Up%20to%20Date-brightgreen) ![Exam Version](https://img.shields.io/badge/Exam%20Version-May%202025%20Refresh-blue)
 # 🤖 Caroline's AI-900 Study Hub
 
 **Goal:** Master the Microsoft Azure AI Fundamentals Exam.
